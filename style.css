@@ -1,0 +1,338 @@
+﻿*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0a0a0a;
+  color:white;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:rgba(0,0,0,0.8);
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color:#00ffd5;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+}
+
+.nav-links li{
+  margin-left:25px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#00ffd5;
+}
+
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  background:linear-gradient(135deg,#111,#1e1e1e,#0f2027);
+}
+
+.hero-logo{
+  width:130px;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:60px;
+}
+
+.subtitle{
+  color:#00ffd5;
+  font-size:22px;
+  margin:10px 0;
+}
+
+.desc{
+  max-width:600px;
+  margin:20px auto;
+  color:#ccc;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 28px;
+  background:#00ffd5;
+  color:black;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:white;
+}
+
+.section{
+  padding:100px 350px;
+  text-align:center;
+  display:column;
+}
+
+.section h2{
+  color:#00ffd5;
+  margin-bottom:20px;
+  font-size:38px;
+}
+
+.footer{
+  background:#0b0b0b;
+  color:white;
+  padding:60px 40px 20px;
+}
+
+.footer-container{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.contact-info{
+  flex:1;
+  min-width:300px;
+}
+
+.contact-info h2{
+  color:#00ffd5;
+  margin-bottom:15px;
+  font-size:36px;
+}
+
+
+
+.contact-info p{
+  color:#ccc;
+  line-height:1.8;
+  font-size:16px;
+}
+
+.contact-me {
+  flex:1;
+  min-width:300px;
+}
+
+.connect{
+  display:flex;
+  flex-direction:column;
+}
+
+.contact-me h2{
+  color:#00ffd5;
+  margin-bottom:15px;
+  font-size:36px;
+}
+
+.connect input,
+.connect textarea{
+  margin-bottom:15px;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:#1a1a1a;
+  color:white;
+  font-size:16px;
+}
+
+.connect input:focus,
+.connect textarea:focus{
+  outline:2px solid #00ffd5;
+}
+
+.connect button{
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:#00ffd5;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.connect button:hover{
+  background:white;
+}
+
+
+
+
+
+.ofs,
+.edu-list,
+.certi-list,
+.projects-list{
+  list-style:none;
+  max-width:900px;
+  margin:auto;
+  padding:0;
+}
+
+.ofs li,
+.edu-list li,
+.certi-list li,
+.projects-list li{
+  list-style:none;
+  margin-bottom:15px;
+  position:relative;
+}
+
+
+
+.dropdown-btn{
+  width:100%;
+  padding:16px 22px;
+  background:#111;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  font-size:18px;
+  text-align:left;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.dropdown-btn:hover{
+  background:#00ffd5;
+  color:#000;
+}
+
+
+.dropdown-container,
+.education-content,
+.certfication-content,
+.certify-list,
+.project-content{
+  display:none;
+  background:#1a1a1a;
+  margin-top:8px;
+  padding:18px 22px;
+  border-radius:12px;
+  list-style:none;
+}
+
+
+
+.ofs li:hover > .dropdown-container{
+  display:block;
+}
+
+.dropdown-container li{
+  padding:10px 0;
+  border-bottom:1px solid #333;
+  color:#ddd;
+}
+
+.dropdown-container li:last-child{
+  border-bottom:none;
+}
+
+
+
+.edu-list li:hover > .education-content{
+  display:block;
+}
+
+.education-item{
+  margin-bottom:20px;
+  text-align:left;
+}
+
+.education-item h3{
+  color:#00ffd5;
+  margin-bottom:8px;
+}
+
+.year{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:20px;
+  background:#00ffd5;
+  color:#000;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+
+
+.certi-list li:hover > .certfication-content{
+  display:block;
+}
+
+.certfication-content li:hover > .certify-list{
+  display:block;
+}
+
+.certify-list li{
+  color:#ddd;
+  line-height:1.7;
+  border-left:4px solid #00ffd5;
+  padding-left:15px;
+  margin-bottom:10px;
+}
+
+
+
+.projects-list li:hover > .project-content{
+  display:block;
+}
+
+.project-content li{
+  color:#ddd;
+  padding:10px 0;
+  border-bottom:1px solid #333;
+}
+
+.project-content li:last-child{
+  border-bottom:none;
+}
+
+.project-content p{
+  color:#ddd;
+  line-height:1.7;
+  font-size:15px;
+}
+
+
