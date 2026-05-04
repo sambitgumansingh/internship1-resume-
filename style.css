@@ -1,440 +1,168 @@
 ﻿*{
-  margin:0;
-  padding:0;
+  margin:0; padding:0;
   box-sizing:border-box;
   font-family:Arial, sans-serif;
 }
+html{ scroll-behavior:smooth; }
+body{ background:#0a0a0a; color:white; }
 
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:#0a0a0a;
-  color:white;
-}
-
+/* ── NAVBAR ── */
 .navbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px;
-  background:rgba(0,0,0,0.8);
+  padding:18px 20px;
+  background:rgba(0,0,0,0.85);
   position:fixed;
-  width:100%;
-  max-width:768px;
-  top:0;
+  width:100%; top:0; left:0;
   z-index:1000;
-  left:0;
-  right:0;
-  margin:0 auto;
 }
+.logo{ font-size:26px; font-weight:bold; color:#00ffd5; }
+.nav-links{ display:flex; list-style:none; }
+.nav-links li{ margin-left:22px; }
+.nav-links a{ color:white; text-decoration:none; transition:0.3s; }
+.nav-links a:hover{ color:#00ffd5; }
 
-.logo{
-  font-size:28px;
-  font-weight:bold;
-  color:#00ffd5;
-}
-
-.nav-links{
-  display:flex;
-  list-style:none;
-}
-
-.nav-links li{
-  margin-left:25px;
-}
-
-.nav-links.active{
-  display:flex;
-}
-
-.nav-links a{
-  color:white;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.nav-links a:hover{
-  color:#00ffd5;
-}
-
-.menu-btn{
+/* ── HAMBURGER (hidden on desktop) ── */
+.hamburger{
   display:none;
-  font-size:28px;
-  cursor:pointer;
-  color:white;
-  background:none;
-  border:none;
-  padding:0;
+  font-size:26px;
+  background:none; border:none;
+  color:white; cursor:pointer;
 }
 
+/* ── MOBILE NAV ── */
+@media (max-width:600px){
+  .hamburger{ display:block; }
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:65px; left:0;
+    width:100%;
+    background:rgba(0,0,0,0.96);
+    padding:20px;
+  }
+  .nav-links.open{ display:flex; }
+  .nav-links li{ margin:10px 0; }
+}
+
+/* ── HERO ── */
 .hero{
-  height:100vh;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:20px;
+  padding:100px 20px 40px;
   background:linear-gradient(135deg,#111,#1e1e1e,#0f2027);
 }
+.hero-logo{ width:100px; margin-bottom:20px; max-width:40%; }
+.hero h1{ font-size:clamp(1.8rem, 6vw, 3.5rem); }
+.subtitle{ color:#00ffd5; font-size:clamp(1rem, 3vw, 1.3rem); margin:10px 0; }
+.desc{ max-width:600px; margin:20px auto; color:#ccc; font-size:clamp(0.85rem, 2vw, 1rem); }
 
-.hero-logo{
-  width:130px;
-  margin-bottom:20px;
-}
-
-.hero h1{
-  font-size:60px;
-}
-
-.subtitle{
-  color:#00ffd5;
-  font-size:22px;
-  margin:10px 0;
-}
-
-.desc{
-  max-width:600px;
-  margin:20px auto;
-  color:#ccc;
-}
-
+/* ── BUTTON ── */
 .btn{
-  display:inline-block;
-  margin-top:20px;
+  display:inline-block; margin-top:20px;
   padding:12px 28px;
-  background:#00ffd5;
-  color:black;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
+  background:#00ffd5; color:black;
+  text-decoration:none; border-radius:30px; font-weight:bold;
 }
+.btn:hover{ background:white; color:black; }
 
-.btn:hover{
-  background:whi40px;
-  text-align:center;
-  display:column;
-  max-width:768px;
-  margin:0 auto
+/* ── SECTIONS ── */
 .section{
-  padding:100px 350px;
+  padding:60px 20px;
   text-align:center;
-  display:column;
 }
-
+@media (min-width:768px){
+  .section{ padding:80px 60px; }
+}
+@media (min-width:1100px){
+  .section{ padding:100px 180px; }
+}
 .section h2{
-  color:#00ffd5;
-  margin-bottom:20px;
-  font-size:38px;
+  color:#00ffd5; margin-bottom:20px;
+  font-size:clamp(1.6rem, 4vw, 2.2rem);
 }
 
-.footer{
-  background:#0b0b0b;
-  color:white;
-  padding:60px 40px 20px;
-}
-
+/* ── FOOTER ── */
+.footer{ background:#0b0b0b; color:white; padding:60px 20px 20px; }
 .footer-container{
-  display:flex;
-  justify-content:space-between;
-  gap:40px;
-  flex-wrap:wrap;
+  display:flex; justify-content:space-between;
+  gap:40px; flex-wrap:wrap;
 }
+.contact-info{ flex:1 1 250px; }
+.contact-info h2{ color:#00ffd5; margin-bottom:15px; font-size:clamp(1.4rem, 4vw, 2rem); }
+.contact-info p{ color:#ccc; line-height:1.8; font-size:16px; }
+.contact-info a{ color:#00ffd5; }
+.contact-me{ flex:1 1 250px; }
+.contact-me h2{ color:#00ffd5; margin-bottom:15px; font-size:clamp(1.4rem, 4vw, 2rem); }
 
-.contact-info{
-  flex:1;
-  min-width:300px;
+/* ── CONTACT FORM ── */
+.connect{ display:flex; flex-direction:column; }
+.connect input, .connect textarea{
+  margin-bottom:15px; padding:14px;
+  border:none; border-radius:10px;
+  background:#1a1a1a; color:white; font-size:16px;
 }
-
-.contact-info h2{
-  color:#00ffd5;
-  margin-bottom:15px;
-  font-size:36px;
-}
-
-
-
-.contact-info p{
-  color:#ccc;
-  line-height:1.8;
-  font-size:16px;
-}
-
-.contact-me {
-  flex:1;
-  min-width:300px;
-}
-
-.connect{
-  display:flex;
-  flex-direction:column;
-}
-
-.contact-me h2{
-  color:#00ffd5;
-  margin-bottom:15px;
-  font-size:36px;
-}
-
-.connect input,
-.connect textarea{
-  margin-bottom:15px;
-  padding:14px;
-  border:none;
-  border-radius:10px;
-  background:#1a1a1a;
-  color:white;
-  font-size:16px;
-}
-
-.connect input:focus,
-.connect textarea:focus{
-  outline:2px solid #00ffd5;
-}
-
+.connect input:focus, .connect textarea:focus{ outline:2px solid #00ffd5; }
 .connect button{
-  padding:14px;
-  border:none;
-  border-radius:10px;
-  background:#00ffd5;
-  color:black;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
+  padding:14px; border:none; border-radius:10px;
+  background:#00ffd5; color:black;
+  font-weight:bold; cursor:pointer; transition:0.3s;
 }
+.connect button:hover{ background:white; }
 
-.connect button:hover{
-  background:white;
+/* ── DROPDOWNS (Skills / Education / Projects) ── */
+.ofs, .edu-list, .certi-list, .projects-list{
+  list-style:none; max-width:900px; margin:auto; padding:0;
 }
-
-
-
-
-
-.ofs,
-.edu-list,
-.certi-list,
-.projects-list{
-  list-style:none;
-  max-width:900px;
-  margin:auto;
-  padding:0;
+.ofs li, .edu-list li, .certi-list li, .projects-list li{
+  list-style:none; margin-bottom:15px; position:relative;
 }
-
-.ofs li,
-.edu-list li,
-.certi-list li,
-.projects-list li{
-  list-style:none;
-  margin-bottom:15px;
-  position:relative;
-}
-
-
-
 .dropdown-btn{
-  width:100%;
-  padding:16px 22px;
-  background:#111;
-  color:#fff;
-  border:none;
-  border-radius:12px;
-  font-size:18px;
-  text-align:left;
-  cursor:pointer;
-  transition:0.3s;
+  width:100%; padding:14px 18px;
+  background:#111; color:#fff;
+  border:none; border-radius:12px;
+  font-size:clamp(14px, 3vw, 18px);
+  text-align:left; cursor:pointer; transition:0.3s;
+}
+.dropdown-btn:hover{ background:#00ffd5; color:#000; }
+
+.dropdown-container, .education-content,
+.certfication-content, .certify-list, .project-content{
+  display:none; background:#1a1a1a;
+  margin-top:8px; padding:16px 18px;
+  border-radius:12px; list-style:none;
 }
 
-.dropdown-btn:hover{
-  background:#00ffd5;
-  color:#000;
-}
+/* ── SKILLS ── */
+.ofs li:hover > .dropdown-container{ display:block; }
+.dropdown-container li{ padding:10px 0; border-bottom:1px solid #333; color:#ddd; }
+.dropdown-container li:last-child{ border-bottom:none; }
 
-
-.dropdown-container,
-.education-content,
-.certfication-content,
-.certify-list,
-.project-content{
-  display:none;
-  background:#1a1a1a;
-  margin-top:8px;
-  padding:18px 22px;
-  border-radius:12px;
-  list-style:none;
-}
-
-
-
-.ofs li:hover > .dropdown-container{
-  display:block;
-}
-
-.dropdown-container li{
-  padding:10px 0;
-  border-bottom:1px solid #333;
-  color:#ddd;
-}
-
-.dropdown-container li:last-child{
-  border-bottom:none;
-}
-
-
-
-.edu-list li:hover > .education-content{
-  display:block;
-}
-
-.education-item{
-  margin-bottom:20px;
-  text-align:left;
-}
-
-.education-item h3{
-  color:#00ffd5;
-  margin-bottom:8px;
-}
-
+/* ── EDUCATION ── */
+.edu-list li:hover > .education-content{ display:block; }
+.education-item{ margin-bottom:20px; text-align:left; }
+.education-item h3{ color:#00ffd5; margin-bottom:8px; }
 .year{
-  display:inline-block;
-  padding:6px 14px;
-  border-radius:20px;
-  background:#00ffd5;
-  color:#000;
-  font-size:14px;
-  font-weight:bold;
-  margin-bottom:10px;
+  display:inline-block; padding:5px 12px; border-radius:20px;
+  background:#00ffd5; color:#000; font-size:13px; font-weight:bold; margin-bottom:10px;
 }
 
-
-
-.certi-list li:hover > .certfication-content{
-  display:block;
-}
-
-.certfication-content li:hover > .certify-list{
-  display:block;
-}
-
+/* ── CERTIFICATIONS ── */
+.certi-list li:hover > .certfication-content{ display:block; }
+.certfication-content li:hover > .certify-list{ display:block; }
 .certify-list li{
-  color:#ddd;
-  line-height:1.7;
-  border-left:4px solid #00ffd5;
-  padding-left:15px;
-  margin-bottom:10px;
+  color:#ddd; line-height:1.7;
+  border-left:4px solid #00ffd5; padding-left:15px; margin-bottom:10px;
 }
 
-
-
-.projects-list li:hover > .project-content{
-  display:block;
-}
-
-.project-content li{
-  color:#ddd;
-  padding:10px 0;
-  border-bottom:1px solid #333;
-}
-
-.project-content li:last-child{
-  border-bottom:none;
-}
-
-.project-content p{
-  color:#ddd;
- 
-
-/* RESPONSIVE DESIGN */
-@media (max-width:768px){
-  body{
-    overflow-x:hidden;
-  }
-
-  .navbar{
-    padding:15px;
-  }
-
-  .logo{
-    font-size:24px;
-  }
-
-  .nav-links{
-    position:fixed;
-    left:-100%;
-    top:60px;
-    flex-direction:column;
-    background:rgba(0,0,0,0.95);
-    width:100%;
-    text-align:center;
-    transition:0.3s;
-    padding:20px 0;
-    max-width:768px;
-  }
-
-  .nav-links.active{
-    left:0;
-  }
-
-  .nav-links li{
-    margin:15px 0;
-  }
-
-  .menu-btn{
-    display:block;
-  }
-
-  .hero{
-    padding:100px 20px 50px;
-    padding-top:120px;
-  }
-
-  .hero h1{
-    font-size:36px;
-  }
-
-  .subtitle{
-    font-size:16px;
-  }
-
-  .desc{
-    max-width:100%;
-    font-size:14px;
-  }
-
-  .section{
-    padding:60px 20px;
-  }
-
-  .section h2{
-    font-size:28px;
-  }
-
-  .ofs,
-  .edu-list,
-  .certi-list,
-  .projects-list{
-    max-width:100%;
-  }
-
-  .footer-container{
-    flex-direction:column;
-    gap:20px;
-  }
-
-  .contact-info,
-  .contact-me{
-    min-width:100%;
-  }
-
-  .contact-info h2,
-  .contact-me h2{
-    font-size:24px;
-  }
-} line-height:1.7;
-  font-size:15px;
-}
-
-
+/* ── PROJECTS ── */
+.projects-list li:hover > .project-content{ display:block; }
+.project-content li{ color:#ddd; padding:10px 0; border-bottom:1px solid #333; }
+.project-content li:last-child{ border-bottom:none; }
+.project-content p{ color:#ddd; line-height:1.7; font-size:15px; }

@@ -1,12 +1,9 @@
-// Toggle mobile menu
 function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('active');
+  document.getElementById('navLinks').classList.toggle('open');
 }
 
-// Close menu when a link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.remove('active');
+    document.getElementById('navLinks').classList.remove('open');
   });
-});
+});// No responsive functionality needed
